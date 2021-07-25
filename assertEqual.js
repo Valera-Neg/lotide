@@ -6,9 +6,5 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
-
-//String.fromCodePoint()
-
 assertEqual("Lighthoise Labs", "Bootcamp");
 assertEqual(1,1);
