@@ -14,7 +14,7 @@ const countOnly = function(allItems, itemsToCount) {
     for(var name of allItems) {
      
       if (name === key && itemsToCount[key] === true) {
-        count++
+        count++;
         result[key] = count;
         
       } else {
