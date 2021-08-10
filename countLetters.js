@@ -1,4 +1,5 @@
 const countLetters = function (str) {
+  console.log(str)
   let newStr = str.toLowerCase();
    let result = {};
     for (let letter of newStr) {
