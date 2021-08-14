@@ -1,14 +1,18 @@
 const _ = require('../index');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire",
-  musical: "Dancing In The Dark"
-};
-assertEqual(_.findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(_.findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(_.findKeyByValue(bestTVShowsByGenre, "Dancing In The Dark"), "musical");
-assertEqual(_.findKeyByValue(bestTVShowsByGenre, "Dancing In The Dark"), "drama");
-assertEqual(_.findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+
+describe("#findKeyByValue", () => { 
+
+  it ("#findKeyByValue should return:  drama", () => {
+    assert.deepEqual(_.findKeyByValue({sci_fi: "The Expanse", comedy: "Brooklyn Nine-Nine", drama:  "The Wire", musical: "Dancing In The Dark"}, "The Wire" ), "drama");
+  });
+  
+    it ("#findKeyByValue should return  undefined", () => {
+      assert.deepEqual(_.findKeyByValue({sci_fi: "The Expanse", comedy: "Brooklyn Nine-Nine", drama:  "The Wire", musical: "Dancing In The Dark"}, "That '70s Show" ), undefined);
+    });
+
+      it ("#findKeyByValue should return:  musical", () => {
+        assert.deepEqual(_.findKeyByValue({sci_fi: "The Expanse", comedy: "Brooklyn Nine-Nine", drama:  "The Wire", musical: "Dancing In The Dark"}, "Dancing In The Dark" ), "musical");
+      });
+});

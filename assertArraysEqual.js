@@ -1,3 +1,6 @@
+/*
+
+
 const _ = require('./index');
 
 const assertArraysEqual = (arr1, arr2) => {
@@ -8,3 +11,6 @@ const assertArraysEqual = (arr1, arr2) => {
   }
 };
 module.exports = assertArraysEqual;
+
+
+*/

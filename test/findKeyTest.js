@@ -1,30 +1,18 @@
 const _ = require('../index');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
 
-assertEqual(_.findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 2), "noma");
+describe("#findKey", () => { 
 
-assertEqual(_.findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 3), "Akaleri");
+  it ("#findKey should return: noma", () => {
+    assert.deepEqual(_.findKey({"Blue Hill":{ stars: 1 },"Akaleri":{ stars: 3 }, "noma":{ stars: 2 },"elBulli":{ stars: 3 },"Ora":{ stars: 2 }, "Akelarre":{ stars: 3 }}, x => x.stars === 2),"noma");
+  });
 
-assertEqual(_.findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 1), "Blue Hill");
+  it ("#findKey should return: Akaleri", () => {
+    assert.deepEqual(_.findKey({"Blue Hill":{ stars: 1 },"Akaleri":{ stars: 3 }, "noma":{ stars: 2 },"elBulli":{ stars: 3 },"Ora":{ stars: 2 }, "Akelarre":{ stars: 3 }}, x => x.stars === 3), "Akaleri");
+  });
+
+  it ("#findKey should return: Blue Hill", () => {
+    assert.deepEqual(_.findKey({"Blue Hill":{ stars: 1 },"Akaleri":{ stars: 3 }, "noma":{ stars: 2 },"elBulli":{ stars: 3 },"Ora":{ stars: 2 }, "Akelarre":{ stars: 3 }},  x => x.stars === 1), "Blue Hill");
+  });
+});

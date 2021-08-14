@@ -1,24 +1,15 @@
 const _ = require('../index');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-  
-];
 
-const result1 = _.countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
-
-console.log(_.countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false }))
+describe("countOnly", () => {
+  it ("#countOnly should return {Fang : 2,Jason: 1} ", () => {
+    assert.deepEqual(_.countOnly(["Karl","Salima","Agouhanna","Fang","Kavith","Jason","Salima","Fang","Joe"],{ "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false }),{"Fang" : 2,'Jason': 1});
+  });
+  it ("#countOnly should return {Joe : 1,'Kavith': 1, Agouhanna: 1 } ", () => {
+    assert.deepEqual(_.countOnly(["Karl","Salima","Agouhanna","Fang","Kavith","Jason","Salima","Fang","Joe"],{ "Kavith": true, "Karima": true, "Joe": true, "Agouhanna": true }),{"Joe" : 1,'Kavith': 1, "Agouhanna": 1 });
+  });
+  it ("#countOnly should return {Fang : 2,Jason: 1, Salima : 2} ", () => {
+    assert.deepEqual(_.countOnly(["Karl","Salima","Agouhanna","Fang","Kavith","Jason","Salima","Fang","Joe"],{ "Jason": true, "Karima": false, "Salima" : true , "Fang": true, "Agouhanna": false }),{"Fang" : 2,'Jason': 1, "Salima" : 2 });
+  });
+});

@@ -12,7 +12,7 @@ const letterPositions = require('./letterPositions');
 const map = require('./map');
 const takeUntil = require('./takeUntil');
 const without = require('./without');
-
+const assert = require('chai').assert;
 
 module.exports = {
   head,
@@ -28,5 +28,6 @@ module.exports = {
   letterPositions,
   map,
   takeUntil,
-  without
+  without,
+  assert
 };

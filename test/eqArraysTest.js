@@ -1,8 +1,17 @@
 const _ = require('../index');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-assertEqual(_.eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(_.eqArrays([1, 2, 3], [1, 0, 3]), false);
-assertEqual(_.eqArrays([1, 2, 3], [1, false, 3]),  false);
-assertEqual(_.eqArrays([1, 2, 3], [1, true, 3]), false);
-assertEqual(_.eqArrays(["Karl","Salima","Agouhanna","Fang"], ["Karl","Salima","Agouhanna","Fang"]), true);
+describe("#eqArrays", () => { 
+
+  it ("#eqArrays should return true", () => {
+    assert.deepEqual(_.eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
+
+  it ("#eqArrays should return true", () => {
+    assert.deepEqual(_.eqArrays(["Karl","Salima","Agouhanna","Fang"], ["Karl","Salima","Agouhanna","Fang"]), true);
+  });
+
+  it ("#eqArrays should return false", () => {
+    assert.deepEqual(_.eqArrays([1, 2, 3], [1, true, 3]), false);
+  });
+});

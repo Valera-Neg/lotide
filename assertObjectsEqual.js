@@ -1,3 +1,6 @@
+/*
+
+
 const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function(obj1, obj2) {
@@ -10,3 +13,5 @@ const assertObjectsEqual = function(obj1, obj2) {
 }; 
 
 module.exports = assertObjectsEqual;
+
+*/

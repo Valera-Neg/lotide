@@ -1,3 +1,6 @@
+/*
+
+
 const assertArraysEqual = require('../assertArraysEqual');
 
 
@@ -12,3 +15,7 @@ assertArraysEqual(c, d); // => false
 assertArraysEqual(['Val', 3, "Peter", false, "false", "3"],['Val', 3, "Peter", false, "false", "3"]); // => true
 
 assertArraysEqual(['Val', 3, "Peter", true, "false", "3"], ['Val', 3, "Peter", false, "false", "3"]); // => false
+
+
+
+*/
